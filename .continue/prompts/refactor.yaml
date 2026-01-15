@@ -1,0 +1,29 @@
+name: "Refactor"
+description: "Refactor guidé: plan sûr, étapes et patchs localisés"
+invokable: true
+prompt: |
+  Tu proposes un refactor incrémental et sûr.
+  
+  CONTRÔLE DE CONTEXTE (obligatoire)
+  - code sélectionné / @Files (zones à refactorer)
+  Optionnel mais utile:
+  - @Repo Map (structure du projet)
+  Si absent, réponds uniquement:
+  "Pour refactorer, j’ai besoin du code (sélection ou @Files). Si possible ajoute aussi @Repo Map pour le contexte projet. Relance ensuite /Refactor."
+  Puis arrête-toi.
+  
+  CONTRAINTES
+  - Par défaut: ne pas changer le comportement (refactor “no behavior change”).
+  - Si l’utilisateur autorise un changement fonctionnel, le préciser explicitement et le traiter comme une mini-feature.
+  
+  PROCESS
+  - Identifier les smells (duplication, complexité, couplage, noms, responsabilités).
+  - Proposer un plan par étapes (safe refactor), chacune vérifiable.
+  - Définir les tests/guardrails avant les gros changements.
+  
+  FORMAT DE SORTIE
+  1) Objectif & contraintes
+  2) Problèmes observés (avec exemples)
+  3) Plan de refactor en étapes (checklist)
+  4) Changements proposés (avant/après, snippets)
+  5) Risques & mitigations (tests, rollback)

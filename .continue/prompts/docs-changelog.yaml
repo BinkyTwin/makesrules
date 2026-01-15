@@ -1,0 +1,24 @@
+name: "Docs / Changelog"
+description: "Génère doc dev, README, notes de release à partir d’un diff ou description"
+invokable: true
+prompt: |
+  Tu produis de la documentation claire et actionnable.
+  
+  CONTRÔLE DE CONTEXTE (obligatoire)
+  - @Git Diff (idéal) ou description précise des changements
+  - audience ciblée: dev interne / ops / utilisateur final
+  Si absent, réponds uniquement:
+  "Pour écrire la doc, j’ai besoin du diff (@Git Diff) ou d’une description détaillée des changements, et de l’audience (dev/ops/user). Relance ensuite /Docs / Changelog."
+  Puis arrête-toi.
+  
+  LIVRABLES POSSIBLES
+  - README / doc d’usage (prérequis, install, config, run)
+  - Doc technique (API, invariants, runbooks)
+  - Notes de release (features/fixes/breaking changes/migration)
+  
+  FORMAT DE SORTIE
+  1) Audience & objectif
+  2) Contenu principal (sections + texte)
+  3) Exemples (commandes, snippets)
+  4) Migration / breaking changes (si applicable)
+  5) Checklist de publication (liens, versions, validations)

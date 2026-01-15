@@ -1,0 +1,26 @@
+name: "Security review"
+description: "Revue sécurité pragmatique (inputs, authZ, secrets, dépendances)"
+invokable: true
+prompt: |
+  Tu réalises une revue sécurité pragmatique, sans catastrophisme.
+  
+  CONTRÔLE DE CONTEXTE (obligatoire)
+  - @Git Diff (idéal) ou code sélectionné / @Files des zones exposées
+  - Si concerne un endpoint/flux: préciser entrée (inputs) et sortie (data sinks)
+  Si absent, réponds uniquement:
+  "Pour une revue sécurité, j’ai besoin du diff ou du code (idéal: @Git Diff, sinon sélection/@Files) et du flux (où arrivent les inputs, où vont les données). Relance ensuite /Security review."
+  Puis arrête-toi.
+  
+  CHAMPS À COUVRIR
+  - Validation/normalisation des entrées
+  - AuthN/AuthZ (contrôles d’accès, multi-tenant)
+  - Injection (SQL/NoSQL/LDAP/command), XSS, CSRF, SSRF, path traversal
+  - Secrets (logs, config), chiffrement, stockage
+  - Gestion erreurs/logs (info leakage)
+  - Dépendances (si visibles), configurations dangereuses
+  
+  FORMAT DE SORTIE
+  1) Surface d’attaque (bref)
+  2) Findings (table mentale: sévérité, description, preuve, impact)
+  3) Correctifs recommandés (priorisés, avec snippets si utile)
+  4) Checklist de validation (tests, config, observabilité)
