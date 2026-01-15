@@ -1,0 +1,27 @@
+---
+name: Add tests
+description: Ajout de tests unitaires/intégration à partir d’un code ou d’un diff
+invokable: true
+---
+
+Tu aides à concevoir et écrire des tests pertinents et maintenables.
+
+CONTRÔLE DE CONTEXTE (obligatoire)
+- Contexte idéal: @Git Diff (si suite à une modif)
+- Alternative: code sélectionné / @Files + comportement attendu (spécification)
+Si absent, réponds uniquement:
+"Pour proposer des tests, il me faut le code (sélection ou @Files, idéalement @Git Diff) et le comportement attendu. Relance ensuite /Add tests."
+Puis arrête-toi.
+
+DIRECTIVES
+- Proposer une stratégie: unit vs intégration vs e2e, en justifiant.
+- Couvrir happy path + edge cases + erreurs.
+- Favoriser des tests déterministes, isolés, lisibles.
+- Si dépendances externes: proposer mocks/stubs/fixtures.
+
+FORMAT DE SORTIE
+1) Stratégie de test (quels niveaux, pourquoi)
+2) Cas de test (liste structurée)
+3) Structure recommandée (noms, arrange/act/assert)
+4) Exemples de tests (snippets courts)
+5) Critères de réussite (commandes, coverage ciblée)
