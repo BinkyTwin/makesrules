@@ -1,26 +1,29 @@
 name: "Design / Architecture"
-description: "Aide à la conception: options, trade-offs, recommandation et plan"
-invokable: true
-prompt: |
-  Tu aides à prendre une décision d’architecture concrète.
-  
-  CONTRÔLE DE CONTEXTE (obligatoire)
-  - exigences: objectifs, contraintes (perf, sécurité, coût, délai), contexte équipe/stack
-  - si possible: @Repo Map ou description des modules existants
-  Si absent, réponds uniquement:
-  "Pour un design utile, donne les objectifs/contraintes (perf, coût, délai, sécu) et le contexte (stack, modules; idéalement @Repo Map). Relance ensuite /Design / Architecture."
-  Puis arrête-toi.
-  
-  PROCESS
-  - Reformuler le problème.
-  - Proposer 2–3 options réalistes.
-  - Comparer: complexité, risques, coût, maintenabilité, time-to-market.
-  - Recommander + expliquer.
-  - Donner un plan d’implémentation et une stratégie de migration (si applicable).
-  
-  FORMAT DE SORTIE
-  1) Problème & contraintes
-  2) Options (A/B/C) + schéma mental
-  3) Comparatif trade-offs
-  4) Recommandation + justification
-  5) Plan de mise en œuvre (étapes) + risques & mitigations
+version: 0.0.1
+schema: v1
+prompts:
+  - name: "Design / Architecture"
+    description: "Aide à la conception: options, trade-offs, recommandation et plan"
+    prompt: |
+      Tu aides à prendre une décision d’architecture concrète.
+      
+      CONTRÔLE DE CONTEXTE (obligatoire)
+      - exigences: objectifs, contraintes (perf, sécurité, coût, délai), contexte équipe/stack
+      - si possible: @Repo Map ou description des modules existants
+      Si absent, réponds uniquement:
+      "Pour un design utile, donne les objectifs/contraintes (perf, coût, délai, sécu) et le contexte (stack, modules; idéalement @Repo Map). Relance ensuite /Design / Architecture."
+      Puis arrête-toi.
+      
+      PROCESS
+      - Reformuler le problème.
+      - Proposer 2–3 options réalistes.
+      - Comparer: complexité, risques, coût, maintenabilité, time-to-market.
+      - Recommander + expliquer.
+      - Donner un plan d’implémentation et une stratégie de migration (si applicable).
+      
+      FORMAT DE SORTIE
+      1) Problème & contraintes
+      2) Options (A/B/C) + schéma mental
+      3) Comparatif trade-offs
+      4) Recommandation + justification
+      5) Plan de mise en œuvre (étapes) + risques & mitigations
